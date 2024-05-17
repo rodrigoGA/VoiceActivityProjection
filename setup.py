@@ -8,6 +8,6 @@ setup(
     description="Voice Activity Projection: Self-Supervised Learning of Turn-taking Events",
     author="erikekst",
     author_email="erikekst@kth.se",
-    url="https://github.com/ErikEkstedt/VoiceActivityProjection",
+    url="https://github.com/rodrigoGA/VoiceActivityProjection",
     packages=["vap"],
 )
