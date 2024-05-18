@@ -28,6 +28,36 @@ import math
 import torchaudio.functional as AF
 import time
 
+import time
+import base64
+import ujson
+import numpy as np
+from collections import deque
+from pydub import AudioSegment
+import io
+import torchaudio
+
+# Redefinir las clases para asegurar que están correctamente definidas en este entorno
+
+# Implementación con deque
+class AudioBufferDeque:
+    def __init__(self, duration_ms==2500, chunk_size_ms=20, frame_rate=8000):
+        self.chunk_size_ms = chunk_size_ms
+        self.num_chunks = duration_ms // chunk_size_ms
+        self.buffer = deque(maxlen=self.num_chunks)
+
+    def add_chunk(self, chunk):
+        self.buffer.append(chunk)
+
+    def get_audio_segment(self):
+        all_audio_bytes = b''.join(self.buffer)
+        audio_segment = AudioSegment(
+            all_audio_bytes, 
+            sample_width=1, 
+            frame_rate=frame_rate, 
+            channels=1
+        )
+        return audio_segment
 
 
 def get_args():
